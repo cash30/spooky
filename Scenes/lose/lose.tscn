@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=3 uid="uid://dcq8o67ggajg6"]
+
+[ext_resource type="FontFile" uid="uid://b63j4ljwf1b7e" path="res://Fonts/bold_block/Bold Block Font/Bold Block.ttf" id="1_04a82"]
+[ext_resource type="PackedScene" uid="uid://bd8hm8ds1ilaf" path="res://Scenes/Main/Scare.tscn" id="2_qgh6o"]
+[ext_resource type="Script" uid="uid://be6sfpya6q7gx" path="res://Scripts/scareHiding.gd" id="3_7jneu"]
+[ext_resource type="Texture2D" uid="uid://blvmvjf2li3w4" path="res://Art/Spider.png" id="4_wvtkp"]
+
+[sub_resource type="Theme" id="Theme_emrbh"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.24115604, 0.24115604, 0.24115601, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.24800001
+anchor_top = 0.162
+anchor_right = 0.75900006
+anchor_bottom = 0.33200002
+offset_left = 0.3039856
+offset_top = 0.024002075
+offset_right = -0.368042
+offset_bottom = -0.13601685
+grow_horizontal = 2
+theme = SubResource("Theme_emrbh")
+theme_override_colors/font_color = Color(0.5449743, 0.54497427, 0.54497427, 1)
+theme_override_fonts/font = ExtResource("1_04a82")
+theme_override_font_sizes/font_size = 80
+text = "YOU DUN LOST"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spider" type="Sprite2D" parent="."]
+position = Vector2(270, 412)
+scale = Vector2(10, 10)
+texture = ExtResource("4_wvtkp")
+
+[node name="Spider2" type="Sprite2D" parent="."]
+position = Vector2(872, 414)
+scale = Vector2(10, 10)
+texture = ExtResource("4_wvtkp")
+
+[node name="Node2D" parent="." instance=ExtResource("2_qgh6o")]
+visible = false
+script = ExtResource("3_7jneu")

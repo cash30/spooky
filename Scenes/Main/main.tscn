@@ -1,9 +1,43 @@
-[gd_scene load_steps=2 format=3 uid="uid://c0cshcpnxmcbd"]
+[gd_scene load_steps=7 format=3 uid="uid://c0cshcpnxmcbd"]
 
-[ext_resource type="Texture2D" uid="uid://35ampprlgmx2" path="res://icon.svg" id="1_1r6ip"]
+[ext_resource type="PackedScene" uid="uid://dffgfjmvyd3vq" path="res://Scenes/Spawner/spawner.tscn" id="2_lixft"]
+[ext_resource type="PackedScene" uid="uid://bqp4dcf42f6kd" path="res://Scenes/player/player.tscn" id="3_5yls4"]
+[ext_resource type="PackedScene" uid="uid://bcveoex1r12j4" path="res://Scenes/Main/deathLine.tscn" id="3_qw60k"]
+[ext_resource type="Texture2D" uid="uid://bof0pk1pmlqcp" path="res://Art/catacombs.png" id="4_5yls4"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5yls4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5yls4"]
+size = Vector2(57, 659)
 
 [node name="Main" type="Node2D"]
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(145, 104)
-texture = ExtResource("1_1r6ip")
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+
+[node name="Catacombs" type="Sprite2D" parent="."]
+position = Vector2(575.99994, 324)
+scale = Vector2(0.60031265, 0.60055614)
+texture = ExtResource("4_5yls4")
+
+[node name="deathLine" parent="." groups=["deathLine"] instance=ExtResource("3_qw60k")]
+position = Vector2(574, 663)
+scale = Vector2(0.665, 0.665)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_5yls4")]
+position = Vector2(199, 583)
+
+[node name="spawner" parent="." instance=ExtResource("2_lixft")]
+position = Vector2(0, -15)
+scale = Vector2(1, 0.99999994)
+
+[node name="Borders" type="StaticBody2D" parent="."]
+position = Vector2(1180, 319)
+physics_material_override = SubResource("PhysicsMaterial_5yls4")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Borders"]
+shape = SubResource("RectangleShape2D_5yls4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders"]
+position = Vector2(-1208, 0)
+shape = SubResource("RectangleShape2D_5yls4")

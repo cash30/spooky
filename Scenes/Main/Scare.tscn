@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bd8hm8ds1ilaf"]
 
 [ext_resource type="Texture2D" uid="uid://cadbderxcwmjt" path="res://Art/Screenshot 2025-10-27 113210.png" id="1_nycej"]
-[ext_resource type="Script" uid="uid://beyjuic5x6fti" path="res://Scenes/Main/sprite_2d.gd" id="2_63ah8"]
+[ext_resource type="Script" uid="uid://beyjuic5x6fti" path="res://Scenes/Main/jumpScare.gd" id="2_63ah8"]
 [ext_resource type="AudioStream" uid="uid://c7sf8s4llg7l4" path="res://Sounds/Scare.mp3" id="2_nycej"]
 
 [node name="Node2D" type="Node2D"]
@@ -9,7 +9,7 @@
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_nycej")
 volume_db = 24.0
-pitch_scale = 1.29
+pitch_scale = 0.89
 autoplay = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

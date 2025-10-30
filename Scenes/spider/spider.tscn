@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://oq3njbdhyion"]
+
+[ext_resource type="Script" uid="uid://xwxwwedc03ni" path="res://Scripts/spider.gd" id="1_tucaw"]
+[ext_resource type="Texture2D" uid="uid://cb8fd2rrf86pe" path="res://Art/SpiderOnWeb.png" id="2_buhwe"]
+
+[node name="spider" type="Area2D" groups=["spider"]]
+script = ExtResource("1_tucaw")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(22, -16)
+polygon = PackedVector2Array(-10, -12, -14, -16, -15, -16, -21, -10, -21, -7, -19, -7, -15, -11, -11, -8, -11, -5, -15, -8, -16, -8, -22, -2, -22, 0, -21, 0, -16, -5, -11, -1, -10, -1, -10, 2, -13, -1, -14, -1, -20, 5, -20, 7, -19, 7, -14, 2, -13, 2, -10, 5, -10, 7, -13, 4, -14, 4, -20, 10, -20, 13, -18, 13, -14, 9, -13, 9, -7, 15, -5, 15, -4, 16, 4, 16, 5, 15, 7, 15, 13, 9, 14, 9, 18, 13, 20, 13, 20, 10, 14, 4, 13, 4, 10, 7, 10, 5, 13, 2, 14, 2, 19, 7, 20, 7, 20, 4, 14, -2, 13, -2, 10, 1, 10, 0, 15, -5, 16, -5, 20, -1, 21, 0, 22, 0, 22, -3, 16, -9, 15, -9, 11, -5, 11, -9, 14, -12, 15, -12, 20, -7, 21, -7, 21, -10, 15, -16, 14, -16, 10, -12, 9, -12, 5, -16, -4, -16, -6, -15, -8, -13, -9, -12)
+
+[node name="SpiderOnWeb" type="Sprite2D" parent="."]
+position = Vector2(22, -300)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_buhwe")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
