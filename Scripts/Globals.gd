@@ -1,20 +1,19 @@
 extends Node
-@export var loseScene : PackedScene = load("res://Scenes/lose/lose.tscn")
-@export var startScene : PackedScene = load("res://Scenes/lose/start.tscn")
-@export var main : PackedScene = load("res://Scenes/Main/main.tscn")
-var score : int
-var isAdmin : bool = true
-var didLose : bool = false
-var didStart : bool = false
-var playerHealth : int = 100
-var timeUntilCanShoot : float = 0
 
-# Called when the node enters the scene tree for the first time.
+@export var loseScene  : PackedScene = load("res://Scenes/UI/lose.tscn")
+@export var startScene : PackedScene = load("res://Scenes/UI/start.tscn")
+@export var main       : PackedScene = load("res://Scenes/Main/main.tscn")
+
+var score              : int = 0
+var isAdmin            : bool = true
+var didLose            : bool = false
+var didStart           : bool = false
+var playerHealth       : int = 100
+var timeUntilCanShoot  : float = 0
+
 func _ready() -> void:
-	pass # Replace with function body.
+	pass 
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	
 	if !didStart:
@@ -29,6 +28,7 @@ func _process(_delta: float) -> void:
 			lose()
 		if Input.is_action_just_pressed("admin_restart"):	
 			title()
+
 
 func title() -> void:
 	didLose = false

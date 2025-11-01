@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6kj5fax01k4q"]
+
+[ext_resource type="Script" uid="uid://ik8lob01nom3" path="res://Scripts/scoreCounter.gd" id="1_2y4kx"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchor_right = 0.437
+anchor_bottom = 0.231
+offset_right = -0.42401123
+offset_bottom = 0.31199646
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.5372549)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "Score: 000"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_2y4kx")

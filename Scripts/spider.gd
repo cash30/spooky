@@ -28,6 +28,7 @@ func _on_area_entered(area: Area2D) -> void:
 		print ("oof")
 		
 	if area.is_in_group("bullet"):
+		Globals.score += 10
 		set_deferred("monitoring", false)
 		print ("killing spooder")
 		hasBeenHit = true

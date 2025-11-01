@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c0cshcpnxmcbd"]
+[gd_scene load_steps=12 format=3 uid="uid://c0cshcpnxmcbd"]
 
 [ext_resource type="PackedScene" uid="uid://dffgfjmvyd3vq" path="res://Scenes/Spawner/spawner.tscn" id="2_lixft"]
 [ext_resource type="PackedScene" uid="uid://bqp4dcf42f6kd" path="res://Scenes/player/player.tscn" id="3_5yls4"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bof0pk1pmlqcp" path="res://Art/catacombs.png" id="4_5yls4"]
 [ext_resource type="Script" uid="uid://8lxky1othypq" path="res://Scripts/progress_bar.gd" id="5_p6jpk"]
 [ext_resource type="AudioStream" uid="uid://btk251kleba1m" path="res://Sounds/music.mp3" id="6_2a143"]
+[ext_resource type="PackedScene" uid="uid://b6kj5fax01k4q" path="res://Scenes/UI/scoreCounter.tscn" id="7_xlvfx"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5yls4"]
 
@@ -71,3 +72,14 @@ metadata/_edit_use_anchors_ = true
 stream = ExtResource("6_2a143")
 volume_db = -28.623
 autoplay = true
+
+[node name="Control" parent="." instance=ExtResource("7_xlvfx")]
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = 832.0
+offset_top = 39.0
+offset_right = 1382.0
+offset_bottom = 145.0
+grow_vertical = 1
+scale = Vector2(0.5, 0.5)
+size_flags_horizontal = 4

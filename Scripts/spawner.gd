@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
 	spawnAtInterval(timeBetweenSpiders, spider, spiderXOffset, 0)
 	
 	if timeBetweenSpiders > 0.5:
-		timeBetweenSpiders -= 0.1 * delta
+		timeBetweenSpiders -= 0.05 * delta
 	
 	if Globals.isAdmin and Input.is_action_just_pressed("admin_spawn_spider"):
 		spawn(spider, spiderXOffset, 0)
