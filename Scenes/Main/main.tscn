@@ -1,14 +1,25 @@
-[gd_scene load_steps=7 format=3 uid="uid://c0cshcpnxmcbd"]
+[gd_scene load_steps=11 format=3 uid="uid://c0cshcpnxmcbd"]
 
 [ext_resource type="PackedScene" uid="uid://dffgfjmvyd3vq" path="res://Scenes/Spawner/spawner.tscn" id="2_lixft"]
 [ext_resource type="PackedScene" uid="uid://bqp4dcf42f6kd" path="res://Scenes/player/player.tscn" id="3_5yls4"]
 [ext_resource type="PackedScene" uid="uid://bcveoex1r12j4" path="res://Scenes/Main/deathLine.tscn" id="3_qw60k"]
 [ext_resource type="Texture2D" uid="uid://bof0pk1pmlqcp" path="res://Art/catacombs.png" id="4_5yls4"]
+[ext_resource type="Script" uid="uid://8lxky1othypq" path="res://Scripts/progress_bar.gd" id="5_p6jpk"]
+[ext_resource type="AudioStream" uid="uid://btk251kleba1m" path="res://Sounds/music.mp3" id="6_2a143"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5yls4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5yls4"]
 size = Vector2(57, 659)
+
+[sub_resource type="Theme" id="Theme_p6jpk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2a143"]
+bg_color = Color(0.30692264, 0.3069227, 0.30692258, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [node name="Main" type="Node2D"]
 
@@ -28,8 +39,9 @@ scale = Vector2(0.665, 0.665)
 position = Vector2(199, 583)
 
 [node name="spawner" parent="." instance=ExtResource("2_lixft")]
-position = Vector2(0, -15)
+position = Vector2(12, -15.000001)
 scale = Vector2(1, 0.99999994)
+spiderXOffset = 1150
 
 [node name="Borders" type="StaticBody2D" parent="."]
 position = Vector2(1180, 319)
@@ -41,3 +53,21 @@ shape = SubResource("RectangleShape2D_5yls4")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders"]
 position = Vector2(-1208, 0)
 shape = SubResource("RectangleShape2D_5yls4")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = 45.0
+offset_top = 354.0
+offset_right = 72.0
+offset_bottom = 502.0
+size_flags_horizontal = 4
+theme = SubResource("Theme_p6jpk")
+theme_override_styles/background = SubResource("StyleBoxFlat_2a143")
+fill_mode = 3
+show_percentage = false
+script = ExtResource("5_p6jpk")
+metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_2a143")
+volume_db = -28.623
+autoplay = true

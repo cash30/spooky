@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://bcveoex1r12j4"]
+[gd_scene load_steps=4 format=3 uid="uid://bcveoex1r12j4"]
 
 [ext_resource type="Texture2D" uid="uid://b0lgetax5opyk" path="res://Art/line.png" id="1_bybju"]
+[ext_resource type="Script" uid="uid://birji1aqhkkri" path="res://Scenes/Main/death_line.gd" id="1_nl30a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nl30a"]
 size = Vector2(1896, 41.5)
 
 [node name="Area2D" type="Area2D"]
+script = ExtResource("1_nl30a")
 
 [node name="Line" type="Sprite2D" parent="."]
 position = Vector2(2.999887, 39.25)
@@ -15,3 +17,5 @@ texture = ExtResource("1_bybju")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["deathLine"]]
 position = Vector2(3, -1.75)
 shape = SubResource("RectangleShape2D_nl30a")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

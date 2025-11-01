@@ -9,11 +9,15 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	spawnAtInterval(timeBetweenSpiders, spider, spiderXOffset, 0)
+	
+	if timeBetweenSpiders > 0.5:
+		timeBetweenSpiders -= 0.1 * delta
 	
 	if Globals.isAdmin and Input.is_action_just_pressed("admin_spawn_spider"):
 		spawn(spider, spiderXOffset, 0)
+	
 func spawn(inst, Xoffset, Yoffset) -> void:
 	
 	var offsetX = Xoffset
@@ -25,7 +29,7 @@ func spawn(inst, Xoffset, Yoffset) -> void:
 	
 
 func spawnAtInterval(interval, inst, Xoffset, Yoffset) -> void:
-	spiderXOffset = randi_range(0, 1130)
+	spiderXOffset = randi_range(0, 1050)
 	Xoffset = Xoffset
 	timer -= 1 * get_process_delta_time()
 	if timer <= 0:
