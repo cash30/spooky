@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=3 uid="uid://cli27eocmw0k5"]
+
+[ext_resource type="Texture2D" uid="uid://bqopwg2cdohsq" path="res://Art/Trophty.png" id="1_o836s"]
+[ext_resource type="Script" uid="uid://2t6icfgpt4n5" path="res://Scripts/win.gd" id="1_plt4t"]
+[ext_resource type="PackedScene" uid="uid://bsofw6bgvooam" path="res://Scenes/UI/trumpetSound.tscn" id="2_b76ss"]
+[ext_resource type="FontFile" uid="uid://b63j4ljwf1b7e" path="res://Fonts/bold_block/Bold Block Font/Bold Block.ttf" id="3_plt4t"]
+[ext_resource type="Texture2D" uid="uid://dp5p02f8xeq1g" path="res://Art/player.png" id="5_plt4t"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_plt4t")
+sound = ExtResource("2_b76ss")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.23392546, 0.23392546, 0.23392543, 1)
+
+[node name="Decorations" type="Sprite2D" parent="."]
+position = Vector2(925, 506.00003)
+rotation = 0.5235988
+scale = Vector2(10, 10)
+texture = ExtResource("1_o836s")
+
+[node name="left" type="Sprite2D" parent="Decorations"]
+position = Vector2(-60.921776, 34.480385)
+rotation = -1.0471977
+texture = ExtResource("1_o836s")
+
+[node name="Banner" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.134
+anchor_right = 1.0
+anchor_bottom = 0.37800002
+offset_top = 0.16799927
+offset_bottom = 0.055984497
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_plt4t")
+theme_override_font_sizes/font_size = 100
+text = "YOU WIN!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Player" type="Sprite2D" parent="."]
+position = Vector2(528, 421.00003)
+scale = Vector2(10, 10)
+texture = ExtResource("5_plt4t")

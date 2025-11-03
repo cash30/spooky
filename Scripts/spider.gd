@@ -20,7 +20,7 @@ func _process(delta: float) -> void:
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("deathLine"):
 		print("haha i was too fast")
-		#Globals.playerHealth -= 10
+		Globals.playerHealth -= 10
 		Globals.lose()
 		queue_free()
 		
@@ -32,6 +32,7 @@ func _on_area_entered(area: Area2D) -> void:
 		set_deferred("monitoring", false)
 		print ("killing spooder")
 		hasBeenHit = true
+		remove_from_group("spider")
 		#position.y += freeFallSpeed
-		
-	pass # Replace with function body.
+
+#i am glad that this computer works with wakatime becuase the other one isnt working. no one is gonna read this but if you do DM Cassius Crum on slack and tell me. also tell me if you find the other rant about wakatime. i was tired, ok? (i 100% DONT just want more time)

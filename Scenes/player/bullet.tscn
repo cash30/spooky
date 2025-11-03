@@ -8,10 +8,11 @@ z_index = 1
 script = ExtResource("1_ia4w3")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, -18)
 polygon = PackedVector2Array(-1, -15, -2, -10, -3, 0, -3, 7, -5, 7, -5, 10, -3, 10, -3, 16, -1, 18, 1, 18, 3, 16, 3, 10, 5, 10, 5, 7, 3, 7, 3, 0, 2, -10, 1, -15)
 
 [node name="Bullet" type="Sprite2D" parent="."]
-position = Vector2(0, -1.9999999)
+position = Vector2(0, -19.999998)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_ia4w3")
 

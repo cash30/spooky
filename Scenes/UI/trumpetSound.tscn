@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsofw6bgvooam"]
+
+[ext_resource type="AudioStream" uid="uid://cebyw7qau3nlv" path="res://Sounds/tada-fanfare-a-6313.mp3" id="1_of4fh"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_of4fh")
+pitch_scale = 1.11
+autoplay = true

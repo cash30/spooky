@@ -9,9 +9,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	text ="Score: " + str(Globals.score)
 	timer += 1 * delta
-	if timer >= 1:
+	if timer >= 1 and !Globals.didLose:
 		Globals.score += 1
 		timer = 0
-	text ="Score: " + str(Globals.score)
-	pass
+		

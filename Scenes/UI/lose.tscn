@@ -1,19 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://dcq8o67ggajg6"]
+[gd_scene load_steps=8 format=3 uid="uid://dcq8o67ggajg6"]
 
+[ext_resource type="Script" uid="uid://b0eyowq2kevsm" path="res://Scenes/UI/restart.gd" id="1_3vfsb"]
 [ext_resource type="FontFile" uid="uid://b63j4ljwf1b7e" path="res://Fonts/bold_block/Bold Block Font/Bold Block.ttf" id="1_04a82"]
 [ext_resource type="PackedScene" uid="uid://bd8hm8ds1ilaf" path="res://Scenes/Main/Scare.tscn" id="2_qgh6o"]
 [ext_resource type="Script" uid="uid://be6sfpya6q7gx" path="res://Scripts/scareHiding.gd" id="3_7jneu"]
 [ext_resource type="Texture2D" uid="uid://blvmvjf2li3w4" path="res://Art/Spider.png" id="4_wvtkp"]
+[ext_resource type="PackedScene" uid="uid://b6kj5fax01k4q" path="res://Scenes/UI/scoreCounter.tscn" id="5_vbvos"]
 
 [sub_resource type="Theme" id="Theme_emrbh"]
 
-[node name="Control" type="Control"]
+[node name="lose" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_3vfsb")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -44,16 +47,43 @@ text = "YOU DUN LOST"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="score" parent="." instance=ExtResource("5_vbvos")]
+layout_mode = 1
+anchor_left = 0.46300003
+anchor_top = 0.333
+anchor_right = 0.568
+anchor_bottom = 0.39100003
+offset_left = -0.3760376
+offset_top = 0.21600342
+offset_right = 362.664
+offset_bottom = 112.63197
+scale = Vector2(0.25, 0.25)
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.85800004
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -17.984009
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 80
+text = "Press Anywhere to Restart"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Spider" type="Sprite2D" parent="."]
-position = Vector2(270, 412)
+position = Vector2(271, 394)
 scale = Vector2(10, 10)
 texture = ExtResource("4_wvtkp")
 
-[node name="Spider2" type="Sprite2D" parent="."]
-position = Vector2(872, 414)
-scale = Vector2(10, 10)
+[node name="Spider2" type="Sprite2D" parent="Spider"]
+position = Vector2(60.199997, 0.20000076)
+scale = Vector2(0.99999994, 0.99999994)
 texture = ExtResource("4_wvtkp")
 
-[node name="Node2D" parent="." instance=ExtResource("2_qgh6o")]
+[node name="jumpy" parent="." instance=ExtResource("2_qgh6o")]
 visible = false
 script = ExtResource("3_7jneu")
